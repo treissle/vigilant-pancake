@@ -4,7 +4,7 @@ import MySQLdb.cursors
 
 # Database details
 app = Flask(__name__)
-app.secret_key = 'cactus'
+app.secret_key = 'canyon'
 
 app.config['MYSQL_HOST'] = '107.180.1.16'
 app.config['MYSQL_PORT'] = 3306
