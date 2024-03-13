@@ -37,11 +37,11 @@ def login():
             if session['type'] == 'mentor':
                 return redirect(url_for('mentor'))
             elif session['type'] == 'mentee'
-                return redirect(url_for('mentee'))
-            
+                return redirect(url_for('mentee'))   
         else:
             msg = 'Incorrect username/password!'
             return render_template('login.html', msg=msg)
+
     return render_template('login.html', msg='')
 
 
