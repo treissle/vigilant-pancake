@@ -21,13 +21,13 @@ def login():
         username = request.form['username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM GuideU WHERE username = %s AND password = %s', (username, password))
+        cursor.execute('SELECT * FROM GUIDEU WHERE username = %s AND password = %s', (username, password))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
-            session['type'] = account['type']
+            session['usertype'] = account['usertype']
       
             session['user_data'] = {
                 'XXXX': account['XXXX'],
