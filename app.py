@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 
+# Database details
 app = Flask(__name__)
 app.secret_key = 'cactus'
 
@@ -12,6 +13,7 @@ app.config['MYSQL_PASSWORD'] = 'spring2024Cteam10'
 app.config['MYSQL_DB'] = 'spring2024Cteam10'
 mysql = MySQL(app)
 
+# App route login
 @app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -41,6 +43,18 @@ def login():
             msg = 'Incorrect username/password!'
             return render_template('login.html', msg=msg)
     return render_template('login.html', msg='')
+
+
+# App route mentor
+
+
+# App route mentee
+
+
+# App route profile
+
+
+# App route logout
 
 
 
