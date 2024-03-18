@@ -46,6 +46,22 @@ def login():
     return render_template('login.html', msg='')
 
 
+# App route mentor
+@app.route('/mentor', methods=['GET', 'POST'])
+def mentor():
+
+
+
+    return render_template('mentor.html', msg='')
+
+# App route mentee
+@app.route('/mentee', methods=['GET', 'POST'])
+def mentee():
+
+
+
+    return render_template('mentee.html', msg='')
+
 # App route register
 
 
