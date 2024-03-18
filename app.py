@@ -35,9 +35,9 @@ def login():
             #     'XXXX': account['XXXX']
             # }
             
-            if session['type'] == 'mentor':
+            if session['usertype'] == 'mentor':
                 return redirect(url_for('mentor'))
-            elif session['type'] == 'mentee':
+            elif session['usertype'] == 'mentee':
                 return redirect(url_for('mentee'))   
         else:
             msg = 'Incorrect username/password!'
