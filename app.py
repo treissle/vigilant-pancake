@@ -29,10 +29,11 @@ def login():
             session['username'] = account['username']
             session['usertype'] = account['usertype']
       
-            session['user_data'] = {
-                'XXXX': account['XXXX'],
-                'XXXX': account['XXXX']
-            }
+            # Can read relevant data into session variable
+            # session['user_data'] = {
+            #     'XXXX': account['XXXX'],
+            #     'XXXX': account['XXXX']
+            # }
             
             if session['type'] == 'mentor':
                 return redirect(url_for('mentor'))
@@ -45,10 +46,10 @@ def login():
     return render_template('login.html', msg='')
 
 
-# App route mentor
+# App route register
 
 
-# App route mentee
+# App route directory
 
 
 # App route profile
