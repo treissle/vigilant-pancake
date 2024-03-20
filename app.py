@@ -65,30 +65,30 @@ def mentee():
 # App route register
 @app.route('/register', methods =['GET','POST'])
 def register():
-	msg = ''
-	if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        # firstname = request.form['firstname']
-        # lastname = request.form['lastname']
-        # username = request.form['username']
-        # password = request.form['password']
-        # bio = request.form['bio']
-        # department = request.form['department']
-        # certifications = request.form['certifications']
-        # usertype = request.form['usertype']
-        # IorE = request.form['IorE']
-        # TorS = request.form['TorS']
-        # MorS = request.form['MorS']
-		cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-		cursor.execute('SELECT * FROM GUIDEU WHERE username = % s', (username, ))
-		account = cursor.fetchone()
-		if account:
-			msg = 'Account already exists !'
-		else:
-			cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, usertype, firstname, lastname, bio, department, certification, IorE, TorS, MorS))
-			mysql.connection.commit()
-			msg = 'You have successfully registered'
-			return render_template('login.html', msg = msg, username=username)
-	return render_template('register.html', msg = msg)
+    msg = ''
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        username = request.form['username']
+        password = request.form['password']
+        bio = request.form['bio']
+        department = request.form['department']
+        certifications = request.form['certifications']
+        usertype = request.form['usertype']
+        IorE = request.form['IorE']
+        TorS = request.form['TorS']
+        MorS = request.form['MorS']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM GUIDEU WHERE username = % s', (username, ))
+        account = cursor.fetchone()
+        if account:
+            msg = 'Account already exists !'
+        else:
+            cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, usertype, firstname, lastname, bio, department, certification, IorE, TorS, MorS))
+            mysql.connection.commit()
+            msg = 'You have successfully registered'
+            return render_template('login.html', msg = msg, username=username)
+    return render_template('register.html', msg = msg)
 
 
 # App route directory
