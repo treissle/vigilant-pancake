@@ -73,7 +73,7 @@ def register():
         password = request.form['password']
         bio = request.form['bio']
         department = request.form['department']
-        certifications = request.form['certifications']
+        certification = request.form['certification']
         usertype = request.form['usertype']
         IorE = request.form['IorE']
         TorS = request.form['TorS']
@@ -84,7 +84,7 @@ def register():
         if account:
             msg = 'Account already exists !'
         else:
-            cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, usertype, firstname, lastname, bio, department, certifications, IorE, TorS, MorS))
+            cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, usertype, firstname, lastname, bio, department, certification, IorE, TorS, MorS))
             mysql.connection.commit()
             msg = 'You have successfully registered'
             return render_template('login.html', msg = msg, username=username)
