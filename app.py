@@ -67,17 +67,17 @@ def mentee():
 def register():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
+        first_name = request.form['fname']
+        last_name = request.form['lname']
         username = request.form['username']
         password = request.form['password']
         bio = request.form['bio']
         department = request.form['department']
-        certification = request.form['certification']
-        usertype = request.form['usertype']
-        IorE = request.form['IorE']
-        TorS = request.form['TorS']
-        MorS = request.form['MorS']
+        certifications = request.form.getlist('multipleCheckbox')
+        role = request.form['role']
+        personality = request.form['personality']
+        personality2 = request.form['personality2']
+        personality3 = request.form['personality3']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM GUIDEU WHERE username = % s', (username, ))
         account = cursor.fetchone()
