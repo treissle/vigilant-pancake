@@ -84,7 +84,7 @@ def register():
         if account:
             msg = 'Account already exists !'
         else:
-            cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, usertype, bio, department, certification, IorE, TorS, MorS, firstname, lastname))
+            cursor.execute('INSERT INTO GUIDEU VALUES (NULL, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, role, bio, department, certifications, personality, personality2, personality3, first_name, last_name))
             mysql.connection.commit()
             msg = 'You have successfully registered'
             return render_template('login.html', msg = msg, username=username)
