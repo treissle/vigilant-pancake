@@ -11,7 +11,7 @@
       <img src="Guide U transparent.png" class="logo">
       <div class="register-box">
         <h2>Register for an Account</h2>
-        <form action="javascript:register()" method="post">
+        <form action="{{ url_for('register') }}" method="post">
           <input id="firstname" type="text" name="fname" placeholder="First Name" required />
           <input id="lastname" type="text" name="lname" placeholder="Last Name" required />
           <input id="username" type="text" name="username" placeholder="Username" required />
