@@ -1,0 +1,135 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  .container {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(45deg, #4EB439, #FADA39);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .register-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 500px;
+  }
+  
+  .register-box h1 {
+    color: #376896;
+  }
+  
+  .register-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .register-box input[type="text"], .register-box input[type="password"], .register-box textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .register-box input[type="radio"] {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .register-box input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  .register-box input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  select {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .register-box table{
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .radio-table-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px; /* Adjust as needed */
+  }
+  
+  .multipleSelect {
+    width: 250px;
+    justify-content: left;
+    align-items: center;
+    display: inline-block;
+  }
+  
+  .selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 250px;
+    display: inline-block;
+  }
+  
+  .selectionBox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #multipleCheckbox {
+    display: none;
+    border: 1px solid;
+    position: relative;
+    
+  }
+  
+  #multipleCheckbox label {
+    display: flex;
+    align-items: center;
+  }
+  
+  #multipleCheckbox label:hover {
+    background-color: #45a049;
+  }
+  
+  textarea {
+    resize: none;
+  }

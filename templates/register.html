@@ -11,14 +11,14 @@
       <img src="Guide U transparent.png" class="logo">
       <div class="register-box">
         <h2>Register for an Account</h2>
-        <form action="{{ url_for('register') }}" method="post">
+        <form action="javascript:register()" method="post">
           <input id="firstname" type="text" name="fname" placeholder="First Name" required />
           <input id="lastname" type="text" name="lname" placeholder="Last Name" required />
           <input id="username" type="text" name="username" placeholder="Username" required />
           <input id="password"type="password" name="password" placeholder="Password" required/>
-          <input id="bio" type="text" name="bio" placeholder="Bio" required />
+          <textarea id="bio" type="text" name="bio" placeholder="Bio" rows="5" cols="30" maxlength="245">  </textarea>
           <label for="department">Department</label>
-          <select>
+          <select id="department">
             <option value="Finance">Finance</option>
             <option value="Human Resources"">Human Resources</option>
             <option value="Information Technology"">Information Technology</option>
@@ -41,26 +41,26 @@
                   <input type="checkbox" id="Finance1" />Finance I</label>
               <label for="Finance2">
                   <input type="checkbox" id="Finance2" />Finance II</label>
-              <label for="InformationTechnology">
-                  <input type="checkbox" id="InformationTechnology" />Information Technology I</label>
+              <label for="InformationTechnology1">
+                  <input type="checkbox" id="InformationTechnology1" />Information Technology I</label>
               <label for="InformationTechnology2">
               <input type="checkbox" id="InformationTechnology2" />Information Technology II</label>
-              <label for="Legal">
-              <input type="checkbox" id="Legal" />Legal I</label>
+              <label for="Legal1">
+              <input type="checkbox" id="Legal1" />Legal I</label>
               <label for="Legal2">
               <input type="checkbox" id="Legal2" />Legal II</label>
-              <label for="Marketing">
-              <input type="checkbox" id="Marketing" />Marketing I</label>
+              <label for="Marketing1">
+              <input type="checkbox" id="Marketing1" />Marketing I</label>
               <label for="Marketing2">
               <input type="checkbox" id="Marketing2" />Marketing II</label>
-              <label for="Sales">
-              <input type="checkbox" id="Sales" />Sales I</label>
+              <label for="Sales1">
+              <input type="checkbox" id="Sales1" />Sales I</label>
               <label for="Sales2">
-              <input type="checkbox" id="Sales" />Sales II</label>
-              <label for="SupplyChain">
-              <input type="checkbox" id="SupplyChain" />Supply Chain I</label>
+              <input type="checkbox" id="Sales2" />Sales II</label>
+              <label for="SupplyChain1">
+              <input type="checkbox" id="SupplyChain1" />Supply Chain I</label>
               <label for="SupplyChain2">
-              <input type="checkbox" id="SupplyChain1" />Supply Chain II</label>
+              <input type="checkbox" id="SupplyChain2" />Supply Chain II</label>
             </div>
           </div>
           
@@ -106,13 +106,13 @@
               </td>
             </tr>
           </table>
-          <div class="msg">{{ msg }}</div>
+
           <input type="submit" value="Register" />
         </form>
       </div>
     </div>
 
-    <script src="{{ url_for('static', filename='accounts.js') }}"></script>
+    <script src="accounts.js"></script>
     <script>
       var selectTagOpen = false;
 
@@ -126,6 +126,7 @@
           selectTagOpen = false;
         }
       }
+
     </script>
   </body>
 </html>
