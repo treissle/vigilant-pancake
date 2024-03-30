@@ -73,7 +73,10 @@ def register():
         password = request.form['password']
         bio = request.form['bio']
         department = request.form['department']
-        # certifications = request.form.getlist('multipleCheckbox')
+        certifications = request.form.getlist('certifications')
+        print(certifications)
+        certifications_str = ','.join(certifications)
+        print(certifications_str)
         role = request.form['role']
         personality = request.form['personality']
         personality2 = request.form['personality2']
@@ -84,7 +87,8 @@ def register():
         if account:
             msg = 'Account already exists !'
         else:
-            cursor.execute('INSERT INTO GUIDEU (username, password, usertype, bio, department, certification, firstname, lastname, IorE, TorS, MorS) VALUES ( % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s);', (username, password, role, bio, department, "null", first_name, last_name, personality, personality2, personality3, ))
+            # cursor.execute('INSERT INTO GUIDEU VALUES ( % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, role, bio, department, certifications_str, first_name, last_name, personality, personality2, personality3))
+            cursor.execute('INSERT INTO GUIDEU (username, password, usertype, bio, department, certification, firstname, lastname, IorE, TorS, MorS) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (username, password, role, bio, department, certifications_str, first_name, last_name, personality, personality2, personality3))
             mysql.connection.commit()
             msg = 'You have successfully registered'
             return render_template('login.html', msg = msg, username=username)
