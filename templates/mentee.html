@@ -1,1 +1,103 @@
-<h1>Mentee</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/mentee.css" />
+    <title>Mentor Page</title>
+  </head>
+  <body>
+    <div class="profile">
+      <h2>Name</h2>
+      <img
+        src="/static/profile_icon.png"
+        alt="User Profile Picture"
+        width="100"
+        height="100"
+      />
+      <p>Position:</p>
+      <p>Department:</p>
+      <p>Bio:</p>
+      <p>Employee ID:</p>
+      <div class="progress-bar">
+        <div class="progress-bar-inner" style="width: 50%">50%</div>
+      </div>
+      <div class="directory"><button id="Directory">Directory</button></div>
+    </div>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openPage(event, 'Mentee 1')">
+        Mentor 1
+      </button>
+      <button class="tablinks" onclick="openPage(event, 'Mentee 2')">
+        Mentor 2
+      </button>
+    </div>
+
+    
+
+    <div class="calendar">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FPhoenix"
+        style="border: 0"
+        width="600"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <div class="star-container">
+      <div class="star-rating" id="rating-1">
+        <p>Meeting Rating:</p>
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <div class="star-rating" id="rating-2">
+        <p>Certification Rating:</p>
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <div class="star-rating" id="rating-3">
+        <p>Overall Rating:</p>
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <script> 
+        const starRatings = document.querySelectorAll('.star-rating');
+        starRatings.forEach((starRating) => {
+            const stars = starRating.querySelectorAll('.star');
+        
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    const selectedStars = starRating.querySelectorAll('.star');
+                    for (let i = 0; i < selectedStars.length; i++) {
+                        selectedStars[i].style.color = i <= index ? 'green' : '#ccc';
+                    }
+                });
+            });
+        });
+        </script>
+    </div>
+
+    <div class="text-container">
+      <h3>Text Your Mentor</h3>
+      <div class="text-area-container">
+        <textarea placeholder="Type your message here..."></textarea>
+        <button>Send</button>
+      </div>
+    </div>
+
+    <script src="/static/mentor.js"></script>
+  </body>
+</html>

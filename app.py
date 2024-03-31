@@ -90,7 +90,7 @@ def register():
             # cursor.execute('INSERT INTO GUIDEU VALUES ( % s, % s, % s, % s, % s, % s, % s, % s, % s, % s, % s)', (username, password, role, bio, department, certifications_str, first_name, last_name, personality, personality2, personality3))
             cursor.execute('INSERT INTO GUIDEU (username, password, usertype, bio, department, certification, firstname, lastname, IorE, TorS, MorS) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (username, password, role, bio, department, certifications_str, first_name, last_name, personality, personality2, personality3))
             mysql.connection.commit()
-            msg = 'You have successfully registered'
+            msg = 'You have successfully registered!'
             return render_template('login.html', msg = msg, username=username)
     return render_template('register.html', msg = msg)
 

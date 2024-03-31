@@ -1,0 +1,151 @@
+body,
+html {
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  background: #85d4fc;
+  color: #333;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.profile {
+  background: white;
+  padding: 20px;
+  border-radius: 0px 0px 20px 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 20%;
+  height: 95vh;
+  float: left;
+  position: relative;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile h2 {
+  color: #333;
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.tab button {
+  background-color: #f4f4f4;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 0px 0px 20px 20px;
+  float: left;
+  width: 38%;
+  margin-bottom: 10px;
+}
+
+.directory button {
+  padding: 10px 15px;
+  background: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  bottom: 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  position: absolute;
+  display:block;
+}
+
+.profile button:hover {
+  background: gold;
+}
+
+
+.progress-bar {
+  width: 75%;
+  background-color: #cffcd8;
+  border-radius: 5px;
+  overflow: hidden;
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 1%;
+  height: 40px;
+}
+
+.progress-bar-inner {
+  height: 40px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+}
+
+.profile-card {
+  width: 30%;
+}
+
+.calendar {
+  float: left;
+  margin-top: 30px;
+  margin-left: 1%;
+}
+
+.star-rating {
+  font-size: 70;
+}
+
+.star {
+  font-size: 50px;
+  color: #ccc;
+}
+
+.star-container {
+  border: 2px solid black;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-left: 5%;
+}
+
+.text-container {
+  display: block;
+  position: relative;
+  margin-top: 1%;
+  padding: 15px;
+  margin-left: 23%
+}
+
+.text-area-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+textarea {
+  padding: 20px;
+  width: 56%;
+  height: 10vh;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 4px;
+}
+
+.text-container button {
+  padding: 10px 15px;
+  background: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px;
+
+}
+
+.text-container button:hover {
+  background: gold;
+}
