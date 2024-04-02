@@ -49,10 +49,14 @@ def login():
 # App route mentor
 @app.route('/mentor', methods=['GET', 'POST'])
 def mentor():
+    if 'username' in session:
+            username = session['username']
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT usertype, department, bio, id, firstname, lastname FROM GUIDEU WHERE username = %s', (username,))
+            mentor_info = cursor.fetchone()
+            print(mentor_info)
+            return render_template('mentor.html', mentor_info=mentor_info)
 
-
-
-    return render_template('mentor.html', msg='')
 
 # App route mentee
 @app.route('/mentee', methods=['GET', 'POST'])

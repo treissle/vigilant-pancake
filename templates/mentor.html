@@ -9,17 +9,17 @@
   </head>
   <body>
     <div class="profile">
-      <h2>Name</h2>
+      <h2>Name: {{ mentor_info['firstname'] }} {{ mentor_info['lastname'] }}</h2>
       <img
         src="/static/profile_icon.png"
         alt="User Profile Picture"
         width="100"
         height="100"
       />
-      <p>Position:</p>
-      <p>Department:</p>
-      <p>Bio:</p>
-      <p>Employee ID:</p>
+      <p>Position: {{ mentor_info['usertype'] }}</p>
+      <p>Department: {{ mentor_info['department'] }}</p>
+      <p>Bio: {{ mentor_info['bio'] }}</p>
+      <p>Employee ID: {{ mentor_info['id'] }}</p>
       <div class="directory"><button id="Directory">Directory</button></div>
     </div>
 
