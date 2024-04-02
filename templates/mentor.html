@@ -21,6 +21,7 @@
       <p>Bio: {{ mentor_info['bio'] }}</p>
       <p>Employee ID: {{ mentor_info['id'] }}</p>
       <div class="directory"><button id="Directory">Directory</button></div>
+      <div class="logout"><button id="logout" onclick="logout()">Log Out</button></div>
     </div>
 
     <div class="tab">
@@ -106,4 +107,24 @@
       </div>
     </div>
   </body>
+  <script>
+    function logout() {
+      const isConfirmed = confirm('Are you sure you want to log out?')
+
+      if(isConfirmed){
+        fetch('/logout', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+          })
+          .then(() => {
+              window.location.href = '/login';
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
+      }
+    }
+  </script>
 </html>
