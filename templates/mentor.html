@@ -9,17 +9,26 @@
   </head>
   <body>
     <div class="profile">
-      <h2>Name: {{ mentor_info['firstname'] }} {{ mentor_info['lastname'] }}</h2>
+      <h2>Name: {{ mentor_info['firstname'][0].capitalize()}}{{ mentor_info['firstname'][1:] }} {{ mentor_info['lastname'][0].capitalize() }}{{ mentor_info['lastname'][1:] }}</h2>
       <img
         src="/static/profile_icon.png"
         alt="User Profile Picture"
         width="100"
         height="100"
       />
-      <p>Position: {{ mentor_info['usertype'] }}</p>
-      <p>Department: {{ mentor_info['department'] }}</p>
-      <p>Bio: {{ mentor_info['bio'] }}</p>
-      <p>Employee ID: {{ mentor_info['id'] }}</p>
+      <p><strong>Employee ID</strong>: {{ mentor_info['id'] }}</p>
+      <p><strong>Position</strong>: {{ mentor_info['usertype'] }}</p>
+      <p><strong>Department</strong>: {{ mentor_info['department'] }}</p>
+      <p><strong>Bio</strong>: {{ mentor_info['bio'] }}</p>
+      <p><strong>Certifications</strong>:</p>
+      <ul>
+        {% for certification in mentor_info['certification'] %}
+          <li>{{ certification }}</li>
+        {% endfor %}
+      </ul>
+      <p><strong>Introvert VS Extrovert</strong>: {{mentor_info['IorE']}}</p>
+      <p><strong>Team VS Self</strong>: {{mentor_info['TorS']}}</p>
+      <p><strong>Multi-tasking VS Single-tasking</strong>: {{mentor_info['MorS']}}</p>
       <div class="directory"><button id="Directory">Directory</button></div>
       <div class="logout"><button id="logout" onclick="logout()">Log Out</button></div>
     </div>

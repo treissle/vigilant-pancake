@@ -35,9 +35,9 @@ def login():
             #     'XXXX': account['XXXX']
             # }
             
-            if session['usertype'] == 'mentor':
+            if session['usertype'] == 'Mentor':
                 return redirect(url_for('mentor'))
-            elif session['usertype'] == 'mentee':
+            elif session['usertype'] == 'Mentee':
                 return redirect(url_for('mentee'))   
         else:
             msg = 'Incorrect username/password!'
@@ -52,11 +52,12 @@ def mentor():
     if 'username' in session:
             username = session['username']
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('SELECT usertype, department, bio, id, firstname, lastname FROM GUIDEU WHERE username = %s', (username,))
+            cursor.execute('SELECT usertype, department, bio, id, firstname, lastname, certification, IorE, TorS, MorS FROM GUIDEU WHERE username = %s', (username,))
             mentor_info = cursor.fetchone()
             print(mentor_info)
+            if mentor_info['certification']:
+                mentor_info['certification'] = mentor_info['certification'].split(',')
             return render_template('mentor.html', mentor_info=mentor_info)
-
 
 # App route mentee
 @app.route('/mentee', methods=['GET', 'POST'])
