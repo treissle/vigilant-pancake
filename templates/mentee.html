@@ -16,19 +16,20 @@
             <p><strong>Position</strong>: {{ mentee_info['usertype'] }}</p>
             <p><strong>Department</strong>: {{ mentee_info['department'] }}</p>
             <p><strong>Bio</strong>: {{ mentee_info['bio'] }}</p>
-
-          <div class="progress-bar">
-              <div class="progress-bar-inner" style="width: 50%">50%</div>
-          </div>
-      
-          <button id="directory">Directory</button>
-          <button id="logout" onclick="logout()">Log Out</button>
+          
+            <h3>Your Progress</h3>
+            <div class="progress-bar"> 
+                <div class="progress-bar-inner" style="width: 50%">50%</div>
+            </div>
+        
+            <button id="directory">Directory</button>
+            <button id="logout" onclick="logout()">Log Out</button>
         </div>
       
         <div class="content">
             <div class="tab">
-              <button class="tabButton activeTab">Nicholas</button>
-              <button class="tabButton" onclick="setActiveTab()">Mazzola</button>
+              <button class="tabButton activeTab"> Dr. Nichols</button>
+              <button class="tabButton" onclick="setActiveTab()"> Dr. Mazzola</button>
             </div>
               
             <!-- Main content goes here -->
@@ -37,29 +38,29 @@
                 <p>Scheduled Meetings</a>
                 <ul>
                     <li><time datetime="2024-04-01">1</time></li>
-                    <li><time datetime="2024-04-02">2</time>   1:1 with Tom</li>
+                    <li><time datetime="2024-04-02">2</time> </li>
                     <li><time datetime="2024-04-03">3</time></li>
                     <li><time datetime="2024-04-04">4</time></li>
-                    <li><time datetime="2024-04-05">5</time>   Meeting with Youjin</li>
+                    <li><time datetime="2024-04-05">5</time>   </li>
                     <li><time datetime="2024-04-06">6</time></li>
                     <li><time datetime="2024-04-07">7</time></li>
-                    <li><time datetime="2024-04-08">8</time>   1:1 with Aniket</li>
+                    <li><time datetime="2024-04-08">8</time>  </li>
                     <li><time datetime="2024-04-09">9</time></li>
                     <li><time datetime="2024-04-10">10</time></li>
-                    <li><time datetime="2024-04-11">11</time>   1:1 with Sachi</li>
+                    <li><time datetime="2024-04-11">11</time>  </li>
                     <li><time datetime="2024-04-12">12</time></li>
                     <li><time datetime="2024-04-13">13</time></li>
                     <li><time datetime="2024-04-14">14</time></li>
-                    <li><time datetime="2024-04-15">15</time>   1:1 Lizzie</li>
+                    <li><time datetime="2024-04-15">15</time>  </li>
                     <li><time datetime="2024-04-16">16</time></li>
-                    <li><time datetime="2024-04-17">17</time>   1:1 with Youjin</li>
+                    <li><time datetime="2024-04-17">17</time>  </li>
                     <li><time datetime="2024-04-18">18</time></li>
                     <li><time datetime="2024-04-19">19</time></li>
                     <li><time datetime="2024-04-20">20</time></li>
                     <li><time datetime="2024-04-21">21</time> </li>
-                    <li><time datetime="2024-04-22">22</time>   1:1 with Tom</li>
+                    <li><time datetime="2024-04-22">22</time>   </li>
                     <li><time datetime="2024-04-23">23</time></li>
-                    <li><time datetime="2024-04-24">24</time>   1:1 with Aniket</li>
+                    <li><time datetime="2024-04-24">24</time>   </li>
                     <li><time datetime="2024-04-25">25</time></li>
                     <li><time datetime="2024-04-26">26</time></li>
                     <li><time datetime="2024-04-27">27</time></li>
@@ -71,6 +72,16 @@
 
             <div class="star-container">
               <div class="star-rating" id="rating-1">
+                <p>Leadership Rating:</p>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <button id="submitRatings">Submit Current Rating for Mentor</button>
+              <h2>Feedback from Mentor</h2>
+              <div class="star-rating-smalltop" id="rating-2">
                 <p>Meeting Rating:</p>
                 <span class="star" data-value="1">&#9733;</span>
                 <span class="star" data-value="2">&#9733;</span>
@@ -78,8 +89,8 @@
                 <span class="star" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
-              <div class="star-rating" id="rating-2">
-                <p>Leadership Rating:</p>
+              <div class="star-rating" id="rating-3">
+                <p>Certification Rating:</p>
                 <span class="star" data-value="1">&#9733;</span>
                 <span class="star" data-value="2">&#9733;</span>
                 <span class="star" data-value="3">&#9733;</span>
@@ -94,7 +105,6 @@
                 <span class="star" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
-              <button id="submitRatings">Submit Current Rating for Mentor</button>
             </div>
             <h3 class='mentee-text'>Text Your Mentor</h3>
             <div class="text-container">

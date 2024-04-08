@@ -12,6 +12,7 @@
             <!-- Sidebar content goes here -->
           <h2>Name: {{ mentor_info['firstname'][0].capitalize()}}{{ mentor_info['firstname'][1:] }} {{ mentor_info['lastname'][0].capitalize() }}{{ mentor_info['lastname'][1:] }}</h2>
           <img src="{{ url_for('static', filename='profile_icon.png') }}" alt="User Profile Picture" width="100" height="100"/>
+          <button id="profile_pic_edit">Edit Profile Picture</button>
           <p><strong>Employee ID</strong>: {{ mentor_info['id'] }}</p>
           <p><strong>Position</strong>: {{ mentor_info['usertype'] }}</p>
           <p><strong>Department</strong>: {{ mentor_info['department'] }}</p>
@@ -22,21 +23,24 @@
               <li>{{ certification }}</li>
             {% endfor %}
           </ul>
-          <p><strong>Introvert VS Extrovert</strong>: {{mentor_info['IorE']}}</p>
-          <p><strong>Team VS Self</strong>: {{mentor_info['TorS']}}</p>
-          <p><strong>Multi-tasking VS Single-tasking</strong>: {{mentor_info['MorS']}}</p>
+          <p><strong>Introvert VS Extrovert</strong>:</p>
+          <p>{{mentor_info['IorE']}}</p>
+          <p><strong>Team VS Self</strong>:</p>
+          <p>{{mentor_info['TorS']}}</p>
+          <p><strong>Multi-tasking VS Single-tasking</strong>:</p>
+          <p>{{mentor_info['MorS']}}</p>
           <div class="directory"><button id="directory">Directory</button></div>
           <div class="logout"><button id="logout" onclick="logout()">Log Out</button></div>
         </div>
         <div class="content">
             <!-- Main content goes here -->
-            <button class="tabButton" onclick="changeTab(30)">Aniket</button>
-            <button class="tabButton" onclick="changeTab(20)">Lizzie</button>
-            <button class="tabButton" onclick="changeTab(40)">Tom</button>
-            <button class="tabButton" onclick="changeTab(65)">Sachi</button>
-            <button class="tabButton" onclick="changeTab(75)">Youjin</button>
+            <button class="tabButton" onclick="updateMeetingsDisplay('Aniket')">Aniket</button>
+            <button class="tabButton" onclick="updateMeetingsDisplay('Lizzie')">Lizzie</button>
+            <button class="tabButton" onclick="updateMeetingsDisplay('Tom')">Tom</button>
+            <button class="tabButton" onclick="updateMeetingsDisplay('Sachi')">Sachi</button>
+            <button class="tabButton" onclick="updateMeetingsDisplay('Youjin')">Youjin</button>
             <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 50%">Mentee Progress: 50%</div>
+                <div class="progress-bar-inner" style="width: 30%">Mentee Progress: 30%</div>
             </div>
             <div class="calendar">
                 <h1>April 2024</h1>
@@ -56,14 +60,14 @@
                     <li><time datetime="2024-04-12">12</time></li>
                     <li><time datetime="2024-04-13">13</time></li>
                     <li><time datetime="2024-04-14">14</time></li>
-                    <li><time datetime="2024-04-15">15</time>   1:1 Lizzie</li>
+                    <li><time datetime="2024-04-15">15</time>   </li>
                     <li><time datetime="2024-04-16">16</time></li>
-                    <li><time datetime="2024-04-17">17</time>   1:1 with Youjin</li>
+                    <li><time datetime="2024-04-17">17</time>   </li>
                     <li><time datetime="2024-04-18">18</time></li>
                     <li><time datetime="2024-04-19">19</time></li>
                     <li><time datetime="2024-04-20">20</time></li>
                     <li><time datetime="2024-04-21">21</time> </li>
-                    <li><time datetime="2024-04-22">22</time>   1:1 with Tom</li>
+                    <li><time datetime="2024-04-22">22</time>   </li>
                     <li><time datetime="2024-04-23">23</time></li>
                     <li><time datetime="2024-04-24">24</time>   1:1 with Aniket</li>
                     <li><time datetime="2024-04-25">25</time></li>
@@ -106,7 +110,7 @@
             <div class="text-container">
                 
                 <textarea placeholder="Type your message here..."></textarea>
-                <button>Send</button>
+                <button onclick="alert('Message Sent to their Slack')">Send</button>
             </div>
 
         </div>
