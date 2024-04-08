@@ -1,103 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/mentee.css" />
-    <title>Mentee Page</title>
-  </head>
-  <body>
-    <div class="profile">
-      <h2>Name</h2>
-      <img
-        src="/static/profile_icon.png"
-        alt="User Profile Picture"
-        width="100"
-        height="100"
-      />
-      <p>Position:</p>
-      <p>Department:</p>
-      <p>Bio:</p>
-      <p>Employee ID:</p>
-      <div class="progress-bar">
-        <div class="progress-bar-inner" style="width: 50%">50%</div>
-      </div>
-      <div class="directory"><button id="Directory">Directory</button></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mentee.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- Sidebar content goes here -->
+            <h2>Name: {{ mentee_info['firstname'][0].capitalize()}}{{ mentee_info['firstname'][1:] }} {{ mentee_info['lastname'][0].capitalize() }}{{ mentee_info['lastname'][1:] }}</h2>
+            <img src="{{ url_for('static', filename='profile_icon.png') }}" alt="User Profile Picture" width="100" height="100"/>
+            <p><strong>Employee ID</strong>: {{ mentee_info['id'] }}</p>
+            <p><strong>Position</strong>: {{ mentee_info['usertype'] }}</p>
+            <p><strong>Department</strong>: {{ mentee_info['department'] }}</p>
+            <p><strong>Bio</strong>: {{ mentee_info['bio'] }}</p>
+
+          <div class="progress-bar">
+              <div class="progress-bar-inner" style="width: 50%">50%</div>
+          </div>
+      
+            <button id="directory">Directory</button>
+            <button id="logout">Log Out</button>
+        </div>
+      
+        <div class="content">
+            <div class="tab">
+              <button class="tabButton activeTab">Aniket</button>
+              <button class="tabButton" onclick="setActiveTab()">Lizzie</button>
+            </div>
+              
+            <!-- Main content goes here -->
+            <div class="calendar">
+                <h1>April 2024</h1>
+                <p>Scheduled Meetings</a>
+                <ul>
+                    <li><time datetime="2024-04-01">1</time></li>
+                    <li><time datetime="2024-04-02">2</time>   1:1 with Tom</li>
+                    <li><time datetime="2024-04-03">3</time></li>
+                    <li><time datetime="2024-04-04">4</time></li>
+                    <li><time datetime="2024-04-05">5</time>   Meeting with Youjin</li>
+                    <li><time datetime="2024-04-06">6</time></li>
+                    <li><time datetime="2024-04-07">7</time></li>
+                    <li><time datetime="2024-04-08">8</time>   1:1 with Aniket</li>
+                    <li><time datetime="2024-04-09">9</time></li>
+                    <li><time datetime="2024-04-10">10</time></li>
+                    <li><time datetime="2024-04-11">11</time>   1:1 with Sachi</li>
+                    <li><time datetime="2024-04-12">12</time></li>
+                    <li><time datetime="2024-04-13">13</time></li>
+                    <li><time datetime="2024-04-14">14</time></li>
+                    <li><time datetime="2024-04-15">15</time>   1:1 Lizzie</li>
+                    <li><time datetime="2024-04-16">16</time></li>
+                    <li><time datetime="2024-04-17">17</time>   1:1 with Youjin</li>
+                    <li><time datetime="2024-04-18">18</time></li>
+                    <li><time datetime="2024-04-19">19</time></li>
+                    <li><time datetime="2024-04-20">20</time></li>
+                    <li><time datetime="2024-04-21">21</time> </li>
+                    <li><time datetime="2024-04-22">22</time>   1:1 with Tom</li>
+                    <li><time datetime="2024-04-23">23</time></li>
+                    <li><time datetime="2024-04-24">24</time>   1:1 with Aniket</li>
+                    <li><time datetime="2024-04-25">25</time></li>
+                    <li><time datetime="2024-04-26">26</time></li>
+                    <li><time datetime="2024-04-27">27</time></li>
+                    <li><time datetime="2024-04-28">28</time></li>
+                    <li><time datetime="2024-04-29">29</time>   1:1 with Sachi</li>
+                    <li><time datetime="2024-04-30">30</time></li>
+                </ul>
+            </div>
+
+            <div class="star-container">
+              <div class="star-rating" id="rating-1">
+                <p>Meeting Rating:</p>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <div class="star-rating" id="rating-2">
+                <p>Leadership Rating:</p>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <div class="star-rating" id="rating-3">
+                <p>Overall Rating:</p>
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <button id="submitRatings">Submit Current Rating for Mentor</button>
+            </div>
+            <h3 class='mentee-text'>Text Your Mentee</h3>
+            <div class="text-container">
+                <textarea placeholder="Type your message here..."></textarea>
+                <button>Send</button>
+            </div>
+        </div>
     </div>
-
-    <div class="tab">
-      <button class="tablinks" onclick="openPage(event, 'Mentee 1')">
-        Mentor 1
-      </button>
-      <button class="tablinks" onclick="openPage(event, 'Mentee 2')">
-        Mentor 2
-      </button>
-    </div>
-
-    
-
-    <div class="calendar">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FPhoenix"
-        style="border: 0"
-        width="600"
-        height="400"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
-    </div>
-
-    <div class="star-container">
-      <div class="star-rating" id="rating-1">
-        <p>Meeting Rating:</p>
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
-      </div>
-      <div class="star-rating" id="rating-2">
-        <p>Certification Rating:</p>
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
-      </div>
-      <div class="star-rating" id="rating-3">
-        <p>Overall Rating:</p>
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
-      </div>
-      <script> 
-        const starRatings = document.querySelectorAll('.star-rating');
-        starRatings.forEach((starRating) => {
-            const stars = starRating.querySelectorAll('.star');
-        
-            stars.forEach((star, index) => {
-                star.addEventListener('click', () => {
-                    const selectedStars = starRating.querySelectorAll('.star');
-                    for (let i = 0; i < selectedStars.length; i++) {
-                        selectedStars[i].style.color = i <= index ? 'green' : '#ccc';
-                    }
-                });
-            });
-        });
-        </script>
-    </div>
-
-    <div class="text-container">
-      <h3>Text Your Mentor</h3>
-      <div class="text-area-container">
-        <textarea placeholder="Type your message here..."></textarea>
-        <button>Send</button>
-      </div>
-    </div>
-
-    <script src="/static/mentor.js"></script>
-  </body>
+   <script src="/static/mentor.js"></script>
+</body>
 </html>

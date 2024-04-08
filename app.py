@@ -62,10 +62,15 @@ def mentor():
 # App route mentee
 @app.route('/mentee', methods=['GET', 'POST'])
 def mentee():
-
-
-
-    return render_template('mentee.html', msg='')
+    if 'username' in session:
+            username = session['username']
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT usertype, department, bio, id, firstname, lastname, certification, IorE, TorS, MorS FROM GUIDEU WHERE username = %s', (username,))
+            mentee_info = cursor.fetchone()
+            print(mentee_info)
+            if mentee_info['certification']:
+                mentee_info['certification'] = mentee_info['certification'].split(',')
+    return render_template('mentee.html', mentee_info=mentee_info)
 
 # App route register
 @app.route('/register', methods =['GET','POST'])
@@ -102,8 +107,6 @@ def register():
 
 # App route directory
 
-
-# App route profile
 
 
 # App route logout

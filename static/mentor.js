@@ -64,3 +64,4 @@ starRatings.forEach((starRating) => {
     });
   });
 });
+

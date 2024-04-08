@@ -10,8 +10,8 @@
     <div class="container">
         <div class="sidebar">
             <!-- Sidebar content goes here -->
-            <h2>Name</h2>
-            <img src="{{ url_for('static', filename='profile_icon.png') }}" alt="User Profile Picture" width="100" height="100"/>
+          <h2>Name: {{ mentor_info['firstname'][0].capitalize()}}{{ mentor_info['firstname'][1:] }} {{ mentor_info['lastname'][0].capitalize() }}{{ mentor_info['lastname'][1:] }}</h2>
+          <img src="{{ url_for('static', filename='profile_icon.png') }}" alt="User Profile Picture" width="100" height="100"/>
           <p><strong>Employee ID</strong>: {{ mentor_info['id'] }}</p>
           <p><strong>Position</strong>: {{ mentor_info['usertype'] }}</p>
           <p><strong>Department</strong>: {{ mentor_info['department'] }}</p>
@@ -30,13 +30,13 @@
         </div>
         <div class="content">
             <!-- Main content goes here -->
-            <button class="tabButton" onclick="openPage(event, 'Mentee 1')">Aniket</button>
-            <button class="tabButton" onclick= changeTab()>Lizzie</button>
-            <button class="tabButton" onclick="openPage(event, 'Mentee 3')">Tom</button>
-            <button class="tabButton" onclick="openPage(event, 'Mentee 4')">Sachi</button>
-            <button class="tabButton" onclick="openPage(event, 'Mentee 5')">Youjin</button>
+            <button class="tabButton" onclick="changeTab(30)">Aniket</button>
+            <button class="tabButton" onclick="changeTab(20)">Lizzie</button>
+            <button class="tabButton" onclick="changeTab(40)">Tom</button>
+            <button class="tabButton" onclick="changeTab(65)">Sachi</button>
+            <button class="tabButton" onclick="changeTab(75)">Youjin</button>
             <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 50%">50%</div>
+                <div class="progress-bar-inner" style="width: 50%">Mentee Progress: 50%</div>
             </div>
             <div class="calendar">
                 <h1>April 2024</h1>
@@ -111,6 +111,34 @@
 
         </div>
     </div>
+
     <script src="/static/mentor.js"></script>
+    <script>
+      function logout() {
+        const isConfirmed = confirm('Are you sure you want to log out?')
+
+        if(isConfirmed){
+          fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(() => {
+                window.location.href = '/login';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+      }
+    </script>
+<script>
+  function changeTab(progressWidth) {
+      var progressBarInner = document.querySelector('.progress-bar-inner');
+      progressBarInner.style.width = progressWidth + '%';
+      progressBarInner.textContent = 'Mentee Progress: ' + progressWidth + '%';
+  }
+</script>
 </body>
 </html>

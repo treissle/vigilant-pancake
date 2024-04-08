@@ -62,7 +62,8 @@ body {
   cursor: pointer;
   font-size: 14px;
   margin-bottom: 95%;
-  margin-left: 20px
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /* Styling for the content area */
@@ -82,8 +83,6 @@ body {
   margin-bottom: 5px;
 
 }
-
-
 
 .progress-bar {
   width: 98%;
@@ -218,4 +217,8 @@ time {
 
 .activeTab {
   background-color: #cffcd8;
+}
+
+.sidebar li {
+  margin-left: 25px;
 }
