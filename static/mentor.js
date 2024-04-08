@@ -65,3 +65,27 @@ starRatings.forEach((starRating) => {
   });
 });
 
+function changeTab(progressWidth) {
+  var progressBarInner = document.querySelector('.progress-bar-inner');
+  progressBarInner.style.width = progressWidth + '%';
+  progressBarInner.textContent = 'Mentee Progress: ' + progressWidth + '%';
+}
+
+function logout() {
+  const isConfirmed = confirm('Are you sure you want to log out?')
+
+  if(isConfirmed){
+    fetch('/logout', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+      })
+      .then(() => {
+          window.location.href = '/login';
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+  }
+}
