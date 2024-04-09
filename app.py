@@ -106,7 +106,9 @@ def register():
 
 
 # App route directory
-
+@app.route('/directory')
+def directory():
+    return render_template('directory.html')
 
 
 # App route logout
