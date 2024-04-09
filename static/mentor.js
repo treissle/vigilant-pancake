@@ -180,7 +180,7 @@ function updateMeetingsDisplay(menteeName) {
         const progressBarInner = document.querySelector('.progress-bar-inner');
         const progressPercentage = menteeProgress[menteeName] || 0; // Default to 0 if not found
 
-        if (menteeName == "Dr.Nichols" || "Dr.Mazzola"){
+        if (menteeName == "Dr.Nichols" || menteeName == "Dr.Mazzola"){
           progressBarInner.style.width = `${progressPercentage}%`;
           progressBarInner.textContent = `${progressPercentage}%`;
         }
