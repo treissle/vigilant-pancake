@@ -19,7 +19,7 @@
           
             <h3>Your Progress</h3>
             <div class="progress-bar"> 
-                <div class="progress-bar-inner" style="width: 50%">50%</div>
+                <div class="progress-bar-inner" style="width: 50%"> 50%</div>
             </div>
         
             <button id="directory">Directory</button>
@@ -28,8 +28,8 @@
       
         <div class="content">
             <div class="tab">
-              <button class="tabButton activeTab"> Dr. Nichols</button>
-              <button class="tabButton" onclick="setActiveTab()"> Dr. Mazzola</button>
+              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Nichols')">Dr.Nichols</button>
+              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Mazzola')">Dr.Mazzola</button>
             </div>
               
             <!-- Main content goes here -->
@@ -65,7 +65,7 @@
                     <li><time datetime="2024-04-26">26</time></li>
                     <li><time datetime="2024-04-27">27</time></li>
                     <li><time datetime="2024-04-28">28</time></li>
-                    <li><time datetime="2024-04-29">29</time>   1:1 with Sachi</li>
+                    <li><time datetime="2024-04-29">29</time> </li>
                     <li><time datetime="2024-04-30">30</time></li>
                 </ul>
             </div>
@@ -109,7 +109,7 @@
             <h3 class='mentee-text'>Text Your Mentor</h3>
             <div class="text-container">
                 <textarea placeholder="Type your message here..."></textarea>
-                <button>Send</button>
+                <button onclick="alert('Message Sent to their Slack')">Send</button>
             </div>
         </div>
     </div>
