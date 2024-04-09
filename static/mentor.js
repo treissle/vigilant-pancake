@@ -145,7 +145,8 @@ const menteeProgress = {
   "Lizzie": 50,
   "Tom": 70,
   "Youjin": 85,
-  
+  "Dr.Nichols" : 70,
+  "Dr.Mazzola" : 45,
 };
 
 function updateMeetingsDisplay(menteeName) {
@@ -178,8 +179,15 @@ function updateMeetingsDisplay(menteeName) {
         detailSpan.textContent = meeting.description;
         const progressBarInner = document.querySelector('.progress-bar-inner');
         const progressPercentage = menteeProgress[menteeName] || 0; // Default to 0 if not found
-        progressBarInner.style.width = `${progressPercentage}%`;
-        progressBarInner.textContent = `Mentee Progress: ${progressPercentage}%`;
+
+        if (menteeName == "Dr.Nichols" || "Dr.Mazzola"){
+          progressBarInner.style.width = `${progressPercentage}%`;
+          progressBarInner.textContent = `${progressPercentage}%`;
+        }
+        else{
+          progressBarInner.style.width = `${progressPercentage}%`;
+          progressBarInner.textContent = `Mentee Progress: ${progressPercentage}%`;
+        }
     
       }
       
