@@ -5,6 +5,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #cffcd8;
   }
   .container {
     flex: 1;
@@ -13,17 +14,23 @@ body {
     align-items: stretch;
   }
   .mentor, .mentee {
-  flex: 1;
+    flex: 1;
     border-radius: 5px;
     overflow: auto; 
+    background-color: #fff;
   }
   .mentor {
+    margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     border: 2px groove #798e8e;
   }
   .mentee {
     border: 2px groove #798e8e;
     margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
   }
   h1 {
     text-align: center;

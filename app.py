@@ -108,7 +108,14 @@ def register():
 # App route directory
 @app.route('/directory')
 def directory():
-    return render_template('directory.html')
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT firstname, lastname, department, bio, certification, usertype FROM GUIDEU")
+    data = cursor.fetchall()
+    mentors = [{'firstname': row[0], 'lastname': row[1], 'department': row[2], 'bio': row[3], 'certification': row[4]} for row in data if row[5] == 'Mentor']
+    print(mentors)
+    mentees = [{'firstname': row[0], 'lastname': row[1], 'department': row[2], 'bio': row[3], 'certification': row[4]} for row in data if row[5] == 'Mentee']
+    print(mentees)
+    return render_template('directory.html', mentors=mentors, mentees=mentees)
 
 
 # App route logout
