@@ -179,18 +179,20 @@ time {
   margin-top: 30px;
 }
 
-.star-rating-smalltop {
-  font-size: 26px;
-  margin-top: 20px;
-}
-
 .star-rating {
   font-size: 26px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .star {
   transition: color 0.2s;
+  font-size: 35px;
+  color: #ccc;
+}
+
+.solidStar {
+  color: green;
+  font-size: 35px;
 }
 
 #submitRatings {
@@ -202,13 +204,6 @@ time {
   cursor: pointer;
   font-size: 14px;
   margin-top: 20px;
-}
-
-
-
-.star {
-  font-size: 35px;
-  color: #ccc;
 }
 
 .text-container {

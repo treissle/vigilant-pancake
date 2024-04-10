@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <!-- Sidebar content goes here -->
+           
             <h2>Name: {{ mentee_info['firstname'][0].capitalize()}}{{ mentee_info['firstname'][1:] }} {{ mentee_info['lastname'][0].capitalize() }}{{ mentee_info['lastname'][1:] }}</h2>
             <img src="{{ url_for('static', filename='profile_icon.png') }}" alt="User Profile Picture" width="100" height="100"/>
             <p><strong>Employee ID</strong>: {{ mentee_info['id'] }}</p>
@@ -28,11 +28,10 @@
       
         <div class="content">
             <div class="tab">
-              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Nichols')">Dr.Nichols</button>
-              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Mazzola')">Dr.Mazzola</button>
+              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Nichols')">Dr. Nichols</button>
+              <button class="tabButton" onclick="updateMeetingsDisplay('Dr.Mazzola')">Dr. Mazzola</button>
             </div>
               
-            <!-- Main content goes here -->
             <div class="calendar">
                 <h1>April 2024</h1>
                 <p>Scheduled Meetings</a>
@@ -79,30 +78,30 @@
                 <span class="star" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
-              <button id="submitRatings">Submit Current Rating for Mentor</button>
+              <button id="submitRatings" onclick="alert('Rating Submitted')">Submit Current Rating for Mentor</button>
               <h2>Feedback from Mentor</h2>
-              <div class="star-rating-smalltop" id="rating-2">
+              <div class="star-rating" id="rating-2">
                 <p>Meeting Rating:</p>
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
+                <span class="solidStar" data-value="1">&#9733;</span>
+                <span class="solidStar" data-value="2">&#9733;</span>
+                <span class="solidStar" data-value="3">&#9733;</span>
+                <span class="solidStar" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
               <div class="star-rating" id="rating-3">
                 <p>Certification Rating:</p>
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
+                <span class="solidStar" data-value="1">&#9733;</span>
+                <span class="solidStar" data-value="2">&#9733;</span>
+                <span class="solidStar" data-value="3">&#9733;</span>
+                <span class="solidStar" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
-              <div class="star-rating" id="rating-3">
+              <div class="star-rating" id="rating-4">
                 <p>Overall Rating:</p>
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
+                <span class="solidStar" data-value="1">&#9733;</span>
+                <span class="solidStar" data-value="2">&#9733;</span>
+                <span class="solidStar" data-value="3">&#9733;</span>
+                <span class="solidStar" data-value="4">&#9733;</span>
                 <span class="star" data-value="5">&#9733;</span>
               </div>
             </div>

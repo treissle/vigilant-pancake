@@ -76,7 +76,6 @@ function deactivateAllTabs() {
   });
 }
 
-// Logout Function
 function logout() {
   const isConfirmed = confirm('Are you sure you want to log out?');
   if (isConfirmed) {
@@ -95,9 +94,7 @@ function logout() {
   }
 }
 
-// Ensure the logout button is wired up to call the logout function
-document.getElementById('logout').addEventListener('click', logout);
-// Meetings data
+
 const meetingsData = {
   "Aniket": [
     {"date": "2024-04-08", "description": " 1:1 with Aniket"},
@@ -119,15 +116,11 @@ const meetingsData = {
     {"date": "2024-04-30", "description": " 1:1 with Lizzie"}
     ],
   "Tom": [
-  {"date": "2024-04-10", "description": " 1:1 with Tom"},
-  {"date": "2024-04-17", "description": " 1:1 with Tom"},
-  {"date": "2024-04-24", "description": " 1:1 with Tom"}
+  {"date": "2024-04-12", "description": " 1:1 with Tom"},
+  {"date": "2024-04-19", "description": " 1:1 with Tom"},
+  {"date": "2024-04-26", "description": " 1:1 with Tom"}
     ],
-  "Youjin": [
-  {"date": "2024-04-12", "description": " 1:1 with Youjin"},
-  {"date": "2024-04-19", "description": " 1:1 with Youjin"},
-  {"date": "2024-04-26", "description": " 1:1 with Youjin"}
-    ],
+
   "Dr.Nichols": [ 
   {"date": "2024-04-10", "description": " 1:1 with Dr.Nichols"},
   {"date": "2024-04-17", "description": " 1:1 with Dr.Nichols"},
@@ -144,9 +137,9 @@ const menteeProgress = {
   "Sachi": 40,
   "Lizzie": 50,
   "Tom": 70,
-  "Youjin": 85,
-  "Dr.Nichols" : 70,
-  "Dr.Mazzola" : 45,
+  "Youjin": 0,
+  "Dr.Nichols" : 50,
+  "Dr.Mazzola" : 50,
 };
 
 function updateMeetingsDisplay(menteeName) {
@@ -178,6 +171,7 @@ function updateMeetingsDisplay(menteeName) {
         }
         detailSpan.textContent = meeting.description;
         const progressBarInner = document.querySelector('.progress-bar-inner');
+        const progressBar = document.querySelector('.progress-bar');
         const progressPercentage = menteeProgress[menteeName] || 0; // Default to 0 if not found
 
         if (menteeName == "Dr.Nichols" || menteeName == "Dr.Mazzola"){
@@ -185,7 +179,12 @@ function updateMeetingsDisplay(menteeName) {
           progressBarInner.textContent = `${progressPercentage}%`;
         }
         else{
-          progressBarInner.style.width = `${progressPercentage}%`;
+          if (progressPercentage != 0){
+            progressBarInner.style.width = `${progressPercentage}%`;
+          }
+          else {
+            progressBarInner.style.width = '20%';
+          }
           progressBarInner.textContent = `Mentee Progress: ${progressPercentage}%`;
         }
     
@@ -195,9 +194,8 @@ function updateMeetingsDisplay(menteeName) {
   }
 }
 
-// Directing to Directory page
 function redirectToDirectory() {
-  var url = "/directory"; // URL of the directory page
+  var url = "/directory"; 
   var win = window.open(url, '_blank');
   win.focus();
 }
