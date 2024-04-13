@@ -199,3 +199,9 @@ function redirectToDirectory() {
   var win = window.open(url, '_blank');
   win.focus();
 }
+
+
+function sendMessage () {
+  alert('Message Sent to their Slack');
+  document.getElementById('textarea').value = '';
+}
