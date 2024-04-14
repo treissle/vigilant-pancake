@@ -97,39 +97,39 @@ function logout() {
 
 const meetingsData = {
   "Aniket": [
-    {"date": "2024-04-08", "description": " 1:1 with Aniket"},
-    {"date": "2024-04-15", "description": " 1:1 with Aniket"},
-    {"date": "2024-04-22", "description": " 1:1 with Aniket"},
-    {"date": "2024-04-29", "description": " 1:1 with Aniket"}
+    {"date": "2024-04-08", "description": " 12pm: Meeting with Aniket"},
+    {"date": "2024-04-15", "description": " 12pm: Meeting with Aniket"},
+    {"date": "2024-04-22", "description": " 12pm: Meeting with Aniket"},
+    {"date": "2024-04-29", "description": " 12pm: Meeting with Aniket"}
    
   ],
   "Sachi": [
-    {"date": "2024-04-11", "description": " 1:1 with Sachi"},
-    {"date": "2024-04-18", "description": " 1:1 with Sachi"},
-    {"date": "2024-04-25", "description": " 1:1 with Sachi"}
+    {"date": "2024-04-11", "description": " 2pm: Meeting with Sachi"},
+    {"date": "2024-04-18", "description": " 2pm: Meeting with Sachi"},
+    {"date": "2024-04-25", "description": " 2pm: Meeting with Sachi"}
 
   ],
   "Lizzie": [
-  {"date": "2024-04-09", "description": " 1:1 with Lizzie"},
-  {"date": "2024-04-16", "description": " 1:1 with Lizzie"},
-  {"date": "2024-04-23", "description": " 1:1 with Lizzie"},
-    {"date": "2024-04-30", "description": " 1:1 with Lizzie"}
+  {"date": "2024-04-09", "description": " 9am: Meeting with Lizzie"},
+  {"date": "2024-04-16", "description": " 9am: Meeting with Lizzie"},
+  {"date": "2024-04-23", "description": " 9am: Meeting with Lizzie"},
+  {"date": "2024-04-30", "description": " 9am: Meeting with Lizzie"}
     ],
   "Tom": [
-  {"date": "2024-04-12", "description": " 1:1 with Tom"},
-  {"date": "2024-04-19", "description": " 1:1 with Tom"},
-  {"date": "2024-04-26", "description": " 1:1 with Tom"}
+  {"date": "2024-04-12", "description": " 10am: Meeting with Tom"},
+  {"date": "2024-04-19", "description": " 10am: Meeting with Tom"},
+  {"date": "2024-04-26", "description": " 10am: Meeting with Tom"}
     ],
 
   "Dr.Nichols": [ 
-  {"date": "2024-04-10", "description": " 1:1 with Dr.Nichols"},
-  {"date": "2024-04-17", "description": " 1:1 with Dr.Nichols"},
-  {"date": "2024-04-24", "description": " 1:1 with Dr.Nichols"}
+  {"date": "2024-04-10", "description": " 1pm: Meeting with Dr.Nichols"},
+  {"date": "2024-04-17", "description": " 1pm: Meeting with Dr.Nichols"},
+  {"date": "2024-04-24", "description": " 1pm: Meeting with Dr.Nichols"}
     ],
   "Dr.Mazzola": [ 
-  {"date": "2024-04-12", "description": " 1:1 with Dr.Mazzola"},
-  {"date": "2024-04-19", "description": " 1:1 with Dr.Mazzola"},
-  {"date": "2024-04-26", "description": " 1:1 with Dr.Mazzola"}
+  {"date": "2024-04-12", "description": " 10am: Meeting with Dr.Nichols"},
+  {"date": "2024-04-19", "description": " 10am: Meeting with Dr.Nichols"},
+  {"date": "2024-04-26", "description": " 10am: Meeting with Dr.Nichols"}
     ]
 };
 const menteeProgress = {
