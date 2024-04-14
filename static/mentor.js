@@ -127,9 +127,9 @@ const meetingsData = {
   {"date": "2024-04-24", "description": " 1pm: Meeting with Dr.Nichols"}
     ],
   "Dr.Mazzola": [ 
-  {"date": "2024-04-12", "description": " 10am: Meeting with Dr.Nichols"},
-  {"date": "2024-04-19", "description": " 10am: Meeting with Dr.Nichols"},
-  {"date": "2024-04-26", "description": " 10am: Meeting with Dr.Nichols"}
+  {"date": "2024-04-12", "description": " 10am: Meeting with Dr.Mazzola"},
+  {"date": "2024-04-19", "description": " 10am: Meeting with Dr.Mazzola"},
+  {"date": "2024-04-26", "description": " 10am: Meeting with Dr.Mazzola"}
     ]
 };
 const menteeProgress = {
